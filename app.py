@@ -11,10 +11,9 @@ def detect_plate(token, f):
 
 def main():
   st.title('EyeTech SensingAPI Demo')
-  st.markdown('''
-    [EyeTech SensingAPI](https://lpr.sensing-api.com)のTokenが必要です。
-  ''')
   api_token = st.text_input('SensingAPI Token')
+  if len(api_token) < 5:
+    st.error("EyeTech SensingAPIのLPR(Entry)プランのTokenが必要です。　https://lpr.sensing-api.com")
   col1, col2 = st.columns(2)
   detect_result = ""
   with col1:
